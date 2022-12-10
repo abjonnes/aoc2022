@@ -16,6 +16,12 @@ def get_input(day):
     return response.text
 
 
+def format_output(output):
+    if isinstance(output, str):
+        return "\n" + output
+    return str(output)
+
+
 @click.command()
 @click.argument("day", type=int, required=True)
 def aoc(day):
@@ -23,7 +29,7 @@ def aoc(day):
 
     data = get_input(day)
 
-    print(f"Part 1: {module.part1(data)}")
+    print(f"Part 1: {format_output(module.part1(data))}")
 
     if hasattr(module, "part2"):
-        print(f"Part 2: {module.part2(data)}")
+        print(f"Part 2: {format_output(module.part2(data))}")
