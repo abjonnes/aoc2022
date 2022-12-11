@@ -17,7 +17,7 @@ def get_input(day):
 
 
 def format_output(output):
-    if isinstance(output, str):
+    if isinstance(output, str) and "\n" in output:
         return "\n" + output
     return str(output)
 
