@@ -105,10 +105,10 @@ class Board:
         return pos, facing
 
 
-def run(data, transforms):
+def run(data, transitions):
     walls, steps = parse_data(data)
 
-    board = Board(walls, 50, transforms)
+    board = Board(walls, 50, transitions)
 
     pos = (50 * (START_SECTOR // 3), 50 * START_SECTOR)
     facing = 0
